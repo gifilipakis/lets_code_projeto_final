@@ -53,6 +53,9 @@ public class ContratosValidator implements ICRUDValidators<AContrato> {
                 throw new IllegalArgumentException("Número de parcelas excede o máximo de 36 parcelas permitidas");
             }    
         }
+        if(contrato.getNumParcelas() <= 0) {
+            throw new IllegalArgumentException("Número de parcelas inválido");
+        }
     };
 
 }
