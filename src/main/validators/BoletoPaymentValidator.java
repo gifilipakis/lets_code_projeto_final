@@ -3,11 +3,8 @@ package main.validators;
 import main.controllers.AContrato;
 import main.controllers.IPaymentValidator;
 import main.models.Boleto;
-import main.models.Message;
 
 public class BoletoPaymentValidator implements IPaymentValidator<Boleto> {
-
-    Message msg = new Message();
 
     @Override
     public void validatePaymentMethod(Boleto boleto, AContrato contrato) {

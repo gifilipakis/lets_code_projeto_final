@@ -6,13 +6,10 @@ import java.util.NoSuchElementException;
 
 import main.controllers.ICRUDValidators;
 import main.controllers.IDataBaseManagement;
-import main.models.Message;
 import main.controllers.APessoa;
 import main.validators.ClienteValidator;
 
 public class ClientesDataBase implements IDataBaseManagement<APessoa>{
-
-    Message msg = new Message();
 
     ICRUDValidators<APessoa> validator = new ClienteValidator();
     private List<APessoa> clientes = new ArrayList<>();

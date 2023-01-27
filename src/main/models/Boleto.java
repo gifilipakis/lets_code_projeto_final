@@ -8,7 +8,7 @@ public class Boleto {
     private String dataVencimento;
     private double valor;
 
-    public Boleto(String codigoDeBarras, String nomePagador, String dataVencimento, double valor) {
+    public Boleto(String codigoDeBarras, String nomePagador, String dataVencimento) {
         this.codigoDeBarras = codigoDeBarras;
         this.nomePagador = nomePagador;
         this.dataVencimento = dataVencimento;

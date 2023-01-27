@@ -2,7 +2,7 @@ package main.models;
 
 import java.io.Serializable;
 
-import main.enums.CategoriasENUM;
+import main.enums.CategoriasVeiculosENUM;
 import main.enums.StatusDoVeiculoENUM;
 import main.enums.TipoDeVeiculoENUM;
 
@@ -13,10 +13,10 @@ public class Veiculos implements Serializable {
     private StatusDoVeiculoENUM status = StatusDoVeiculoENUM.DISPONIVEL;
     private double valorDiario;
     private String marca;
-    private CategoriasENUM categoria;
+    private CategoriasVeiculosENUM categoria;
     private double valorCompra = valorDiario*20;
 
-    public Veiculos(TipoDeVeiculoENUM tipoVeiculo, String identificador, String marca, CategoriasENUM categoria) {
+    public Veiculos(TipoDeVeiculoENUM tipoVeiculo, String identificador, String marca, CategoriasVeiculosENUM categoria) {
         this.tipoVeiculo = tipoVeiculo;
         this.identificador = identificador;
         this.marca = marca;
@@ -48,9 +48,9 @@ public class Veiculos implements Serializable {
     }
     
     public void setValorDiario() {
-        if(this.categoria == CategoriasENUM.PREMIUN) {
+        if(this.categoria == CategoriasVeiculosENUM.PREMIUN) {
             this.valorDiario = 200;
-        } else if(this.categoria == CategoriasENUM.CLASSIC) {
+        } else if(this.categoria == CategoriasVeiculosENUM.CLASSIC) {
             this.valorDiario = 150;
         } else {
             this.valorDiario = 100;
@@ -65,11 +65,11 @@ public class Veiculos implements Serializable {
         this.marca = marca;
     }
     
-    public CategoriasENUM getCategoria() {
+    public CategoriasVeiculosENUM getCategoria() {
         return categoria;
     }
     
-    public void setCategoria(CategoriasENUM categoria) {
+    public void setCategoria(CategoriasVeiculosENUM categoria) {
         this.categoria = categoria;
     }
     

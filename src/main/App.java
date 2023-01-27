@@ -5,7 +5,7 @@ import main.databases.VeiculosDataBase;
 import main.controllers.AContrato;
 import main.controllers.APessoa;
 import main.controllers.IDataBaseManagement;
-import main.enums.CategoriasENUM;
+import main.enums.CategoriasVeiculosENUM;
 import main.enums.FuncaoFuncionariosENUM;
 import main.enums.TipoDeVeiculoENUM;
 import main.models.Boleto;
@@ -28,7 +28,7 @@ public class App {
 
         APessoa cliente1 = new Cliente("00000000000", "Ana", "1234", "01/01");
         APessoa funcionario1 = new Funcionario("000000", "João", "1111", "02/02", FuncaoFuncionariosENUM.VENDEDOR);
-        Veiculos veiculo1 = new Veiculos(TipoDeVeiculoENUM.CARRO, "AABB", "Fiat", CategoriasENUM.PREMIUN);
+        Veiculos veiculo1 = new Veiculos(TipoDeVeiculoENUM.CARRO, "AABB", "Fiat", CategoriasVeiculosENUM.PREMIUN);
         
         CreditCard creditCard = new CreditCard("1234", "04/24", "213", 3000);
         IPaymentStrategy estrategia_pagamento_credito = new CreditCardPayment(creditCard);
@@ -36,7 +36,7 @@ public class App {
         DebitCard debitCard = new DebitCard("4321", "05/27", "123", 5000);
         IPaymentStrategy estrategia_pagamento_debito = new DebitCardPayment(debitCard);
 
-        Boleto boleto = new Boleto("1234", "Maria", "06/23", 0);
+        Boleto boleto = new Boleto("1234", "Maria", "06/23");
         IPaymentStrategy estrategia_pagamento_boleto = new BoletoPayment(boleto);
 
         ////////////////////////////////////////

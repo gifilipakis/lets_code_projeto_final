@@ -1,5 +1,5 @@
 package main.enums;
 
-public enum CategoriasENUM {
+public enum CategoriasVeiculosENUM {
 PREMIUN, CLASSIC, ECONOMIC 
 }

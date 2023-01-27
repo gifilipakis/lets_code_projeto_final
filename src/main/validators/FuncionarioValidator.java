@@ -4,12 +4,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import main.controllers.ICRUDValidators;
-import main.models.Message;
 import main.controllers.APessoa;
 
 public class FuncionarioValidator implements ICRUDValidators<APessoa> {
-
-    Message msg = new Message();
 
     @Override
     public void validateInsert(APessoa funcionario, List<APessoa> funcionarios) {

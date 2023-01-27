@@ -6,7 +6,7 @@ import main.controllers.ICRUDTests;
 import main.controllers.IDataBaseManagement;
 import main.controllers.IPaymentStrategy;
 import main.databases.ContratosDataBase;
-import main.enums.CategoriasENUM;
+import main.enums.CategoriasVeiculosENUM;
 import main.enums.FuncaoFuncionariosENUM;
 import main.enums.TipoDeVeiculoENUM;
 import main.models.Cliente;
@@ -21,7 +21,7 @@ public class ContratosCRUDTests implements ICRUDTests<AContrato> {
     private static ICRUDTests<AContrato> contratosTest = new ContratosCRUDTests();
     private static APessoa cliente = new Cliente("00000000000", "João", "0000-0000", "01/01");
     private static APessoa funcionario = new Funcionario("123456", "Ana", "0000-0000", "01/01", FuncaoFuncionariosENUM.VENDEDOR);
-    private static Veiculos veiculo = new Veiculos(TipoDeVeiculoENUM.CARRO, "AABB", "Fiat", CategoriasENUM.ECONOMIC);
+    private static Veiculos veiculo = new Veiculos(TipoDeVeiculoENUM.CARRO, "AABB", "Fiat", CategoriasVeiculosENUM.ECONOMIC);
     private static CreditCard card = new CreditCard("1234", "05/05", "123", 100000);
     private static IPaymentStrategy paymentStrategy = new CreditCardPayment(card);
 
