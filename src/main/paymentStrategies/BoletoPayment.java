@@ -23,7 +23,7 @@ public class BoletoPayment implements IPaymentStrategy {
     @Override
     public void collectPaymentDetails() {
         System.out.println("Coletando os dados do usuário.");
-        System.out.println("---> "+boleto.toString()); 
+        System.out.println(boleto.toString()); 
     }
 
     @Override

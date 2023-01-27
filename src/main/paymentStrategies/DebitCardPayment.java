@@ -24,7 +24,7 @@ public class DebitCardPayment implements IPaymentStrategy {
     @Override
     public void collectPaymentDetails() {
         System.out.println("Coletando os dados do usuário.");
-        System.out.println("---> "+card.toString());    
+        System.out.println(card.toString());    
     }
     
     @Override

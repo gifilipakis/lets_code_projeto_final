@@ -23,7 +23,7 @@ public class PixPayment implements IPaymentStrategy {
     @Override
     public void collectPaymentDetails() {
         System.out.println("Coletando os dados do usuário.");
-        System.out.println("---> "+pix.toString()); 
+        System.out.println(pix.toString()); 
     }
 
     @Override

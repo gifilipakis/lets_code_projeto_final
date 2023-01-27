@@ -1,10 +1,8 @@
 package main;
 
 import main.controllers.IPaymentStrategy;
-import main.databases.VeiculosDataBase;
 import main.controllers.AContrato;
 import main.controllers.APessoa;
-import main.controllers.IDataBaseManagement;
 import main.enums.CategoriasVeiculosENUM;
 import main.enums.FuncaoFuncionariosENUM;
 import main.enums.TipoDeVeiculoENUM;
@@ -41,38 +39,43 @@ public class App {
         Boleto boleto = new Boleto("1234", "Maria", "06/23");
         IPaymentStrategy estrategia_pagamento_boleto = new BoletoPayment(boleto);
 
-        Pix pix = new Pix("chavePix");
+        Pix pix = new Pix("chavePix12345");
         IPaymentStrategy estrategia_pagamento_pix = new PixPayment(pix);
 
-        ////////////////////////////////////////
-        // System.out.println("Aluguel com Cartão de Crédito");
-        // AContrato contrato_aluguel_1 = new ContratoAluguel(cliente1, funcionario1, veiculo1, estrategia_pagamento_credito, 7, 4);
-        // ServicePayment.processOrder(contrato_aluguel_1);
-        
-        ///////////////////////////////////////
-        // System.out.println("Compra com Cartão de Débito");
-        // AContrato contrato_aluguel_2 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_debito, 1);
-        // ServicePayment.processOrder(contrato_aluguel_2);
+        //////////////////////////////////////
+        System.out.println("---->Aluguel com Cartão de Crédito");
+        AContrato contrato_aluguel_1 = new ContratoAluguel(cliente1, funcionario1, veiculo1, estrategia_pagamento_credito, 7, 4);
+        ServicePayment.processOrder(contrato_aluguel_1);
+        System.out.println();
+
+        /////////////////////////////////////
+        System.out.println("---->Aluguel com Cartão de Débito");
+        AContrato contrato_aluguel_2 = new ContratoAluguel(cliente1, funcionario1, veiculo1, estrategia_pagamento_debito, 7, 1);
+        ServicePayment.processOrder(contrato_aluguel_2);
+
+        /////////////////////////////////////
+        System.out.println("---->Compra com Cartão de Débito");
+        AContrato contrato_aluguel_3 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_debito, 1);
+        ServicePayment.processOrder(contrato_aluguel_3);
+        System.out.println();
                 
-        ///////////////////////////////////////
-        // System.out.println("Compra com Cartão de Crédito");
-        // AContrato contrato_aluguel_3 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_credito, 12);
-        // ServicePayment.processOrder(contrato_aluguel_3);
+        /////////////////////////////////////
+        System.out.println("---->Compra com Cartão de Crédito");
+        AContrato contrato_aluguel_4 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_credito, 12);
+        ServicePayment.processOrder(contrato_aluguel_4);
+        System.out.println();
 
-        ////////////////////////////////////////
-        // System.out.println("Compra com Boleto");
-        // AContrato contrato_aluguel_3 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_boleto, 12);
-        // ServicePayment.processOrder(contrato_aluguel_3);
-
-        ////////////////////////////////////////
-        // System.out.println("Compra com Pix");
-        // AContrato contrato_aluguel_4 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_pix, 12);
-        // ServicePayment.processOrder(contrato_aluguel_4);
-
-        ///////////////////////////////////////
-        System.out.println("Aluguel com Cartão de Débito");
-        AContrato contrato_aluguel_5 = new ContratoAluguel(cliente1, funcionario1, veiculo1, estrategia_pagamento_debito, 7, 1);
+        //////////////////////////////////////
+        System.out.println("---->Compra com Boleto");
+        AContrato contrato_aluguel_5 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_boleto, 12);
         ServicePayment.processOrder(contrato_aluguel_5);
+        System.out.println();
+
+        //////////////////////////////////////
+        System.out.println("---->Compra com Pix");
+        AContrato contrato_aluguel_6 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_pix, 12);
+        ServicePayment.processOrder(contrato_aluguel_6);
+        System.out.println();
 
     }
 
