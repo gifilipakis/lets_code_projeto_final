@@ -15,11 +15,13 @@ import main.models.ContratoCompra;
 import main.models.CreditCard;
 import main.models.DebitCard;
 import main.models.Funcionario;
+import main.models.Pix;
 import main.models.ServicePayment;
 import main.models.Veiculos;
 import main.paymentStrategies.BoletoPayment;
 import main.paymentStrategies.CreditCardPayment;
 import main.paymentStrategies.DebitCardPayment;
+import main.paymentStrategies.PixPayment;
 
 
 public class App {
@@ -39,6 +41,9 @@ public class App {
         Boleto boleto = new Boleto("1234", "Maria", "06/23");
         IPaymentStrategy estrategia_pagamento_boleto = new BoletoPayment(boleto);
 
+        Pix pix = new Pix("chavePix");
+        IPaymentStrategy estrategia_pagamento_pix = new PixPayment(pix);
+
         ////////////////////////////////////////
         // System.out.println("Aluguel com Cartão de Crédito");
         // AContrato contrato_aluguel_1 = new ContratoAluguel(cliente1, funcionario1, veiculo1, estrategia_pagamento_credito, 7, 4);
@@ -55,9 +60,14 @@ public class App {
         // ServicePayment.processOrder(contrato_aluguel_3);
 
         ////////////////////////////////////////
-        System.out.println("Compra com Boleto");
-        AContrato contrato_aluguel_3 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_boleto, 12);
-        ServicePayment.processOrder(contrato_aluguel_3);
+        // System.out.println("Compra com Boleto");
+        // AContrato contrato_aluguel_3 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_boleto, 12);
+        // ServicePayment.processOrder(contrato_aluguel_3);
+
+        ////////////////////////////////////////
+        // System.out.println("Compra com Pix");
+        // AContrato contrato_aluguel_4 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_pix, 12);
+        // ServicePayment.processOrder(contrato_aluguel_4);
 
     }
 
