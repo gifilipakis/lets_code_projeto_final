@@ -69,6 +69,11 @@ public class App {
         // AContrato contrato_aluguel_4 = new ContratoCompra(cliente1, funcionario1, veiculo1, estrategia_pagamento_pix, 12);
         // ServicePayment.processOrder(contrato_aluguel_4);
 
+        ///////////////////////////////////////
+        // System.out.println("Aluguel com Cartão de Débito");
+        // AContrato contrato_aluguel_5 = new ContratoAluguel(cliente1, funcionario1, veiculo1, estrategia_pagamento_debito, 7, 1);
+        // ServicePayment.processOrder(contrato_aluguel_5);
+
     }
 
 }

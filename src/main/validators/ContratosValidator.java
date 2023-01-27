@@ -41,8 +41,8 @@ public class ContratosValidator implements ICRUDValidators<AContrato> {
     
     public void validateContract(AContrato contrato) {
         if(contrato.getTipoContrato() == "ALUGUEL") {
-            if(!(contrato.getEstrategiaPagamento() instanceof CreditCardPayment)) {
-                throw new IllegalArgumentException("Contratos de aluguel só aceitam Cartão de Crédito como forma de pagamento");
+            if(!(contrato.getEstrategiaPagamento() instanceof CreditCardPayment) & contrato.getNumParcelas() > 1) {
+                throw new IllegalArgumentException("Contratos de aluguel com mais de 1 parcela só aceitam Cartão de Crédito como forma de pagamento");
             } else if(contrato.getNumParcelas() > 12) {
                 throw new IllegalArgumentException("Número de parcelas excede o máximo de 12 parcelas permitidas");
             } else if(((ContratoAluguel) contrato).getQntDias() > 90) {

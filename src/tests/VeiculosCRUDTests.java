@@ -4,7 +4,6 @@ import main.controllers.ICRUDTestsManualID;
 import main.controllers.IDataBaseManagement;
 import main.databases.VeiculosDataBase;
 import main.enums.CategoriasVeiculosENUM;
-import main.enums.StatusDoVeiculoENUM;
 import main.enums.TipoDeVeiculoENUM;
 import main.models.Veiculos;
 

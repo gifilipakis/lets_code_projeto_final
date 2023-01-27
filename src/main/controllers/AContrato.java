@@ -2,7 +2,6 @@ package main.controllers;
 
 import java.util.UUID;
 import main.models.Veiculos;
-import main.paymentStrategies.CreditCardPayment;
 import main.validators.ContratosValidator;
 
 public abstract class AContrato {
@@ -23,11 +22,7 @@ public abstract class AContrato {
         this.funcionario = funcionario;
         this.veiculo = veiculo;
         this.estrategiaPagamento = estrategiaPagamento;
-        if(!(estrategiaPagamento instanceof CreditCardPayment)) {
-            this.numParcelas = 1;
-        } else {
-            this.numParcelas = numParcelas;
-        }
+        this.numParcelas = numParcelas;
     }
 
     public void validateContrato(AContrato contrato) {
