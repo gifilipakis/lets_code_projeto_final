@@ -1,15 +1,15 @@
 package tests;
 
 import main.controllers.APessoa;
-import main.controllers.ICRUDTests;
+import main.controllers.ICRUDTestsManualID;
 import main.controllers.IDataBaseManagement;
 import main.databases.FuncionariosDataBase;
 import main.enums.FuncaoFuncionariosENUM;
 import main.models.Funcionario;
 
-public class FuncionariosCRUDTests implements ICRUDTests<APessoa> {
+public class FuncionariosCRUDTests implements ICRUDTestsManualID<APessoa> {
     
-    private static ICRUDTests<APessoa> funcionariosTest = new FuncionariosCRUDTests();
+    private static ICRUDTestsManualID<APessoa> funcionariosTest = new FuncionariosCRUDTests();
     private static APessoa funcionario = new Funcionario("123456", "Ana", "0000-0000", "01/01", FuncaoFuncionariosENUM.VENDEDOR);
     private static String id = funcionario.getIdentificador();
     private static IDataBaseManagement<APessoa> database = new FuncionariosDataBase();

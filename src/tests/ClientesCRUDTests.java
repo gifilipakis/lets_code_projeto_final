@@ -1,14 +1,14 @@
 package tests;
 
 import main.controllers.APessoa;
-import main.controllers.ICRUDTests;
+import main.controllers.ICRUDTestsManualID;
 import main.controllers.IDataBaseManagement;
 import main.databases.ClientesDataBase;
 import main.models.Cliente;
 
-public class ClientesCRUDTests implements ICRUDTests<APessoa> {
+public class ClientesCRUDTests implements ICRUDTestsManualID<APessoa> {
     
-    private static ICRUDTests<APessoa> clientes = new ClientesCRUDTests();
+    private static ICRUDTestsManualID<APessoa> clientes = new ClientesCRUDTests();
     private static APessoa cliente = new Cliente("00000000000", "João", "0000-0000", "01/01");
     private static String id = cliente.getIdentificador();
     private static IDataBaseManagement<APessoa> database = new ClientesDataBase();

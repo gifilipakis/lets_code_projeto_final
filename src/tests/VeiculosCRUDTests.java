@@ -1,6 +1,6 @@
 package tests;
 
-import main.controllers.ICRUDTests;
+import main.controllers.ICRUDTestsManualID;
 import main.controllers.IDataBaseManagement;
 import main.databases.VeiculosDataBase;
 import main.enums.CategoriasVeiculosENUM;
@@ -8,9 +8,9 @@ import main.enums.StatusDoVeiculoENUM;
 import main.enums.TipoDeVeiculoENUM;
 import main.models.Veiculos;
 
-public class VeiculosCRUDTests implements ICRUDTests<Veiculos> {
+public class VeiculosCRUDTests implements ICRUDTestsManualID<Veiculos> {
     
-    private static ICRUDTests<Veiculos> veiculosTests = new VeiculosCRUDTests();
+    private static ICRUDTestsManualID<Veiculos> veiculosTests = new VeiculosCRUDTests();
     private static Veiculos veiculo = new Veiculos(TipoDeVeiculoENUM.CARRO, "AABB", "Fiat", CategoriasVeiculosENUM.ECONOMIC);
     private static String id = veiculo.getIdentificador();
     private static IDataBaseManagement<Veiculos> database = new VeiculosDataBase();
@@ -26,8 +26,6 @@ public class VeiculosCRUDTests implements ICRUDTests<Veiculos> {
         // Specific tests
         veiculosTests.givenObjectAndDatabase_whenInsert_thenReturnIdentifierIsInvalid(database);
         veiculosTests.givenIdAndDatabase_whenSelectedById_thenReturnObjectAsString(database);
-        givenObjectAndDatabase_whenInsert_thenReturnVehicleNotAvaiable(database);
-        
 
     }
     
@@ -45,7 +43,7 @@ public class VeiculosCRUDTests implements ICRUDTests<Veiculos> {
 
     @Override
     public void givenIdAndDatabase_whenSelectedById_thenReturnObjectAsString(IDataBaseManagement<Veiculos> database) {
-        System.out.println("--> Executanto givenIdAndDatabase_whenSelectedById_theSucceed");
+        System.out.println("--> Executanto givenIdAndDatabase_whenSelectedById_thenReturnObjectAsString");
         
         Veiculos veiculo = new Veiculos(TipoDeVeiculoENUM.CARRO, "AABB", "Fiat", CategoriasVeiculosENUM.ECONOMIC);
         database.insert(veiculo);
@@ -53,17 +51,6 @@ public class VeiculosCRUDTests implements ICRUDTests<Veiculos> {
         String expected = "* Identificador: AABB | Tipo: CARRO";
         String actual = database.selectById("AABB");
         assertEquals(expected, actual);
-    }
-
-    public static void givenObjectAndDatabase_whenInsert_thenReturnVehicleNotAvaiable(IDataBaseManagement<Veiculos> database) {
-
-        Veiculos veiculo = new Veiculos(TipoDeVeiculoENUM.CARRO, "", "Fiat", CategoriasVeiculosENUM.ECONOMIC);
-        veiculo.setStatus(StatusDoVeiculoENUM.ALUGADO);
-        database.insert(veiculo);
-
-        String expected = "Veículo não disponível";
-        String actual = database.insert(veiculo);
-        veiculosTests.assertEquals(expected, actual);
     }
 
 

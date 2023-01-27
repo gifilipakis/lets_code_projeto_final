@@ -35,17 +35,11 @@ public class ContratosCRUDTests implements ICRUDTests<AContrato> {
         contratosTest.givenIdAndDatabase_whenDelete_thenReturnDeletionConfirmation(id, database);
         contratosTest.givenIdAndDatabase_whenDelete_thenReturnElementNotFound(id, database);
         contratosTest.givenIdAndDatabase_whenSelectById_thenElementNotFound("54947df8-0e9e-4471-a2f9-9af509fb5889", database);
-        // Teste não aplicável para o caso de contratos
-        // contratosTest.givenObjectAndDatabase_whenInsert_thenReturnElementAlreadyExists(contrato, database);
         
         // Specific tests
         contratosTest.givenIdAndDatabase_whenSelectedById_thenReturnObjectAsString(database);
 
     }
-    
-    // Teste não aplicável para o caso de contratos
-    @Override
-    public void givenObjectAndDatabase_whenInsert_thenReturnIdentifierIsInvalid(IDataBaseManagement<AContrato> database) {}
 
     @Override
     public void givenIdAndDatabase_whenSelectedById_thenReturnObjectAsString(IDataBaseManagement<AContrato> database) {

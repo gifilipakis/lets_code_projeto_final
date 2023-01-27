@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import main.controllers.ICRUDValidators;
-import main.enums.StatusDoVeiculoENUM;
 import main.models.Veiculos;
 
 public class VeiculosValidator implements ICRUDValidators<Veiculos> {
@@ -14,9 +13,7 @@ public class VeiculosValidator implements ICRUDValidators<Veiculos> {
         if( veiculo.getIdentificador().length() != 4 ) {
             throw new IllegalArgumentException("Placa inválida");
 
-        } else if(veiculo.getStatus() != StatusDoVeiculoENUM.DISPONIVEL) {
-            throw new IllegalArgumentException("Veículo não disponível");
-        } 
+        }
 
         for (Veiculos v : veiculos) {
             if(v.getIdentificador() == veiculo.getIdentificador()) {
