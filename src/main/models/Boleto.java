@@ -12,7 +12,6 @@ public class Boleto {
         this.codigoDeBarras = codigoDeBarras;
         this.nomePagador = nomePagador;
         this.dataVencimento = dataVencimento;
-        this.valor = valor;
     }
 
     public String getCodigoDeBarras() {
